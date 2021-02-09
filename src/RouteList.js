@@ -4,16 +4,16 @@ import ColorList from "./ColorList"
 import Color from "./Color"
 import NewColor from "./NewColor"
 
-const RouteList = () => {
+const RouteList = ({colors, addColor}) => {
 
     return (
         <BrowserRouter>
             <Switch>
                 <Route exact path="/color">
-                    <ColorList />
+                    <ColorList colors={colors} />
                 </Route>
                 <Route exact path="/color/new">
-                    <NewColor />
+                    <NewColor addColor={addColor}/>
                 </Route>
                 <Route exact path="/color/:color">
                     <Color />
